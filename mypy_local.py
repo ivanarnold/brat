@@ -48,7 +48,9 @@ def read_adf04(nlevels, num_ergs, filename):
             # and reinsert the 'e'. This was trickier than I thought it would be in python
         temps = str.split(tmp_dat[12:])
         tmp1=[x[0:3] for x in temps]
+#        print("tmp1= ", tmp1)
         tmp2 = ["e" + x[4:7] for x in temps]
+#        print("tmp2= ", tmp2)
         tmp_data=[x+y for x,y in zip(tmp1,tmp2)]
         adf04_dat['temps']=np.array([float(x) for x in tmp_data])
         del(temps)
@@ -67,7 +69,8 @@ def read_adf04(nlevels, num_ergs, filename):
             adf04_dat['lower'][i] = int(tmp_dat[4:8])
             # pull the aval and reinsert the 'e'
             availa = tmp_dat[9:16]
-            adf04_dat['aval'][i] = float(availa[0:3] + "e" + availa[4:7])
+#            print("availa=", availa, availa[0:4], availa[4:7])
+            adf04_dat['aval'][i] = float(availa[0:4] + "e" + availa[4:7])
             # do the same for all the temps
             tmp_csec = str.split(tmp_dat[17:])
             tmp1 = [x[0:3] for x in tmp_csec]

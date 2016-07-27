@@ -1,14 +1,13 @@
 """ Author: Ivan
-This script is designed to extract branching ratios from an adf04 file
+This script is designed to extract a 
+single branching ratio from an adf04 file
 
 """
 import numpy as np
-import matplotlib.pyplot as pl
 from mypy_local import read_adf04
-from branch import csec
 
 # initialize some variables
-ZZERO = 1e-30
+ZZERO = 1e-10
 LAST_LEVEL = 57
 NTRANS = 1596
 NERGS = 7
@@ -49,7 +48,7 @@ for i in range(1, np.size(DATA.wa)+1):
 ratio_mat = AVAL_MAT[AVAL_MAT[:, 1] >= float(DXU), :]
 for i in range(0, np.size(ratio_mat[:, 1]) - 1):
     ratio_mat[i, 2] = ratio_mat[i, 2] / ATOT[int(ratio_mat[i, 1])]
-# %%
+
 
 # Now the tough part. For the level above direct excitation (DXU + 1)
 # through LAST_LEVEL we want to create branching FRACTIONS. As an example,
@@ -171,7 +170,6 @@ for i in range(1, LAST_LEVEL - DXU + 1):
 #    input("Press Enter to continue...")
 #==============================================================================
     
-#%%
     
 # Sort the DATA array by uper level
 DATA_mat = DATA_mat[np.argsort(DATA_mat[:,1])]
@@ -188,82 +186,3 @@ for i in range (1, LAST_LEVEL - DXU + 1):
     tmp_mat = DATA_mat[(DATA_mat[:,1] == DXU +i), :]
     branch_sum = sum(tmp_mat[:,2])
     branch_mat[i,1] = branch_sum
-
-
-level_dat = np.loadtxt('paschen.dat', dtype=str)
-
-level_dat = np.loadtxt('paschen.dat', dtype=str)
-for i in range(0,np.size(level_dat[:,0])):
-    for j in range(0,np.size(level_dat[0,:])):
-        mystring = level_dat[i,j]
-        tick = len(mystring) - 1
-        level_dat[i,j] = mystring[2:tick]
-
-IMETA = int(input('Metastable index = ?'))
-
-filename4 = "bcon_" + str(DXL) + "_" +  str(DXU) + "_" + level_dat[DXL-1,1] + "_" + level_dat[DXU-1,1]
-branch_condensed = branch_mat[(branch_mat[:,1] > 1e-10),:]
-branch_condensed =  branch_condensed[branch_condensed[:,1].argsort()[::-1]]
-branch_condensed = branch_condensed[1:,:]
-bcon_indx = branch_condensed[:,0].astype(int)
-bcon_string = np.empty(np.size(bcon_indx),dtype=str)
-with open(filename4, 'wb') as f:
-    f.write(bytes("#" + filename4 + "\n", "UTF-8"))
-    for i in range (0,np.size(bcon_indx)):
-        con_string =  str(bcon_indx[i]) + '  ' + "{:.4e}".format(branch_condensed[i,1]) \
-                    + '  ' + str(DATA.config_data[bcon_indx[i]-1]) + '  ' \
-                    + str(DATA.xja[bcon_indx[i]-1]) + '  ' + "{:.4f}".format(DATA.wa[bcon_indx[i]-1] * 1.2398e-4)
-        f.write(bytes(con_string + "\n", "UTF-8"))
-
-# Store the branching fractions in a file compatible with cross-section
-# code 'branch.f'
-header1 = "# NTRMN  = " + str(int(INDX_TRANS))
-header2 = "# NTRANS = " + str(int(INDX_TRANS_FINAL))
-filename = "bratio_" + str(DXL) + "_" +  str(DXU) + "_" + level_dat[DXL-1,1] + "_" + level_dat[DXU-1,1]
-
-with open(filename, 'wb') as f:
-    f.write(bytes(header1 + "\n" + header2 + "\n", "UTF-8"))
-    np.savetxt(f, branch_mat, fmt= '%i +%.6e')
-f.close()
-with open('bratin', 'wb') as f:
-    f.write(bytes(header1 + "\n" + header2 + "\n", "UTF-8"))
-    np.savetxt(f, branch_mat, fmt= '%i +%.6e')
-f.close()
-
-CSEC_DATA = csec(int(INDX_TRANS), int(INDX_TRANS_FINAL), IMETA, NTEMPS)
-CSEC_DATA = CSEC_DATA.transpose()
-
-## Plot the branching fractions as a function of DXU + i
-#pl.figure(1, figsize=(8, 6), facecolor='white')
-#pl.plot(branch_mat[1:,0], branch_mat[1:,1],'r' )
-#pl.title(filename)
-#pl.savefig(filename, format='png', dpi=300)
-#pl.show(1)
-
-tmp_up = len(level_dat[DXU-1,2])
-JUP = level_dat[DXU-1,2] ; JUP=JUP[tmp_up-4:tmp_up-3] ; JUP = int(JUP)
-tmp_down = len(level_dat[DXL-1,2])
-JDOWN = level_dat[DXL-1,2] ; JDOWN=JDOWN[tmp_down-4:tmp_down-3] ; JDOWN = int(JDOWN)
-DELTAJ = abs(JUP - JDOWN)
-
-title = level_dat[DXL-1,1] +  r'$\rightarrow$' + level_dat[DXU-1,1] + "  ($\Delta$J = " + str(DELTAJ) + ")"
-filename2 = level_dat[DXL-1,1] +  "_" + level_dat[DXU-1,1] + "_J" + str(DELTAJ)
-## Plot the cross section data
-pl.figure(2, figsize=(8, 6), facecolor='white')
-pl.plot(CSEC_DATA[:,0], CSEC_DATA[:,1],'r' )
-pl.plot(CSEC_DATA[:,0], CSEC_DATA[:,2],'b--' )
-pl.plot(CSEC_DATA[:,0], CSEC_DATA[:,3],'g-.' )
-pl.title(title)
-pl.xlabel('Temperature (eV)')
-pl.ylabel('cross-section (MB)')
-pl.savefig(filename2 + ".png", format='png', dpi=300)
-pl.show(2)
-
-
-with open(filename2 + ".dat", 'wb') as f:
-    f.write(bytes(header1 + "\n" + header2 + "\n", "UTF-8"))
-    np.savetxt(f, CSEC_DATA)
-
-print('\n', 'Branching ratio output saved to ', filename4)
-print('\n', 'Cross section output saved to ', filename2 + ".dat")
-print('\n', 'Plot output saved to ', filename2 + ".png")

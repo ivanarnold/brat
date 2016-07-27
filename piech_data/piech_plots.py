@@ -8,7 +8,7 @@ Created on Tue Jun 21 00:02:57 2016
 # %% INIT
 import pylab as pl
 import os
-os.chdir('/home/ivan/Dropbox/Research/ELEX/brat/piech_data')
+os.chdir('/home/ivan/SpyderSpace/brat/piech_data')
 
 #==============================================================================
 # %% cell0

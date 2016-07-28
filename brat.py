@@ -6,6 +6,8 @@ import numpy as np
 import matplotlib.pyplot as pl
 from mypy_local import read_adf04
 from branch import csec
+from IPython import get_ipython
+ipython = get_ipython()
 
 # initialize some variables
 ZZERO = 1e-30
@@ -174,7 +176,7 @@ for i in range(1, LAST_LEVEL - DXU + 1):
 #%%
     
 # Sort the DATA array by uper level
-DATA_mat = DATA_mat[np.argsort(DATA_mat[:,1])]
+DATA_mat = DATA_mat[np.argsort(DATA_mat[:,0])]
 #print(DATA_mat)
 
 
@@ -230,7 +232,9 @@ with open('bratin', 'wb') as f:
     np.savetxt(f, branch_mat, fmt= '%i +%.6e')
 f.close()
 
-CSEC_DATA = csec(int(INDX_TRANS), int(INDX_TRANS_FINAL), IMETA, NTEMPS)
+CSEC_DATA = np.asarray(csec(int(INDX_TRANS), int(INDX_TRANS_FINAL), IMETA, NTEMPS))
+# %%
+
 CSEC_DATA = CSEC_DATA.transpose()
 
 ## Plot the branching fractions as a function of DXU + i
@@ -248,11 +252,15 @@ DELTAJ = abs(JUP - JDOWN)
 
 title = level_dat[DXL-1,1] +  r'$\rightarrow$' + level_dat[DXU-1,1] + "  ($\Delta$J = " + str(DELTAJ) + ")"
 filename2 = level_dat[DXL-1,1] +  "_" + level_dat[DXU-1,1] + "_J" + str(DELTAJ)
+
+
+# %%
 ## Plot the cross section data
 pl.figure(2, figsize=(8, 6), facecolor='white')
 pl.plot(CSEC_DATA[:,0], CSEC_DATA[:,1],'r' )
 pl.plot(CSEC_DATA[:,0], CSEC_DATA[:,2],'b--' )
 pl.plot(CSEC_DATA[:,0], CSEC_DATA[:,3],'g-.' )
+pl.xlim(0,15)
 pl.title(title)
 pl.xlabel('Temperature (eV)')
 pl.ylabel('cross-section (MB)')

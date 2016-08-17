@@ -2,13 +2,13 @@
 This script is designed to extract branching ratios from an adf04 file
 
 """
-import numpy as np
 import matplotlib.pyplot as pl
 from mypy_local import read_adf04
+import numpy as np
 from branch import csec
-from IPython import get_ipython
-ipython = get_ipython()
-
+#from IPython import get_ipython
+#ipython = get_ipython()
+#
 # initialize some variables
 ZZERO = 1e-30
 LAST_LEVEL = 57

@@ -1,19 +1,4 @@
-""" Author: Ivan
-This script is designed to extract branching ratios from an adf04 file
-
-"""
-import matplotlib.pyplot as pl
-from mypy_local import read_adf04
-import numpy as np
-from branch import csec
-#from IPython import get_ipython
-#ipython = get_ipython()
-#
-# initialize some variables
-ZZERO = 1e-30
-LAST_LEVEL = 57
-NTRANS = 1596
-NERGS = 7
+NERGS = 8
 NTEMPS = 964
 
 DXL = 1
@@ -143,10 +128,10 @@ for i in range(1, LAST_LEVEL - DXU + 1):
     tmp = ratio_mat[(ratio_mat[:,0] == DXU) & (ratio_mat[:,1] == DXU + i),:]
     temp_mat1 = np.concatenate((tmp, temp_mat3), axis=0)
     temp_mat2 = ratio_mat[(ratio_mat[:,0] == DXU +i), :]
-    
+
 #    temp_mat1 = temp_mat1[np.argsort(temp_mat1[:,1])]
 #    temp_mat2 = temp_mat2[np.argsort(temp_mat2[:,1])]
-    
+
     for j in range(0,np.size(temp_mat1[:,0])):
         for k in range(0, np.size(temp_mat2[:,0])):
             temp_mat2[k,2] = temp_mat2[k,2] * temp_mat1[j,2]
@@ -172,9 +157,9 @@ for i in range(1, LAST_LEVEL - DXU + 1):
 #    print("DM", DATA_mat)
 #    input("Press Enter to continue...")
 #==============================================================================
-    
+
 #%%
-    
+
 # Sort the DATA array by uper level
 DATA_mat = DATA_mat[np.argsort(DATA_mat[:,0])]
 #print(DATA_mat)

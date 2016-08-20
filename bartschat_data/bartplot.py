@@ -12,7 +12,7 @@ import os
 
 pl.rcParams['legend.numpoints'] = 1
 
-os.chdir('/home/ivan/Dropbox/Research/ELEX/brat/bartschat_data')
+#os.chdir('/home/ivan/Dropbox/Research/ELEX/brat/bartschat_data')
 
 # %% 1s5 --> 2p10
 
@@ -52,7 +52,7 @@ pl.plot(ourdat[:,0], ourdat[:,2], 'b.', ms=5)
 errorbar = pl.errorbar(bartdat[:,2]-11.548, bartdat[:,3] * 100, bartdat[:,3] \
            * 100 * 0.4, linestyle='None', color='red')
 #pl.plot(boffdat[:,0], boffdat[:,1] * 100, 'gs', ms=5)
-           
+
 ax1.annotate('$2p9 \quad (J=3)$', xy=(300, 200), xycoords='axes points',
             size=14, ha='right', va='top',
             bbox=dict(boxstyle='round', fc='w'))
@@ -78,7 +78,7 @@ pl.plot(ourdat[:,0], ourdat[:,2], 'b.', ms=5)
 errorbar = pl.errorbar(bartdat[:,2]-11.548, bartdat[:,3] * 100, bartdat[:,3] \
            * 100 * 0.4, linestyle='None', color='red')
 #pl.plot(boffdat[:,0], boffdat[:,1] * 100, 'gs', ms=5)
-           
+
 ax1.annotate('$2p8 \quad (J=2)$', xy=(300, 200), xycoords='axes points',
             size=14, ha='right', va='top',
             bbox=dict(boxstyle='round', fc='w'))

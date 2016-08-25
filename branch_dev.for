@@ -8,6 +8,7 @@ C FILE: branch_sub.f
       INTEGER :: i,j,k,l,n, ierr, NAST1, MXE1, NOMT1, NZED1, NELC1
       INTEGER :: istart, ifinish, imeta, ntemps
       REAL, dimension(4, ntemps) :: CSEC_DATA
+      REAL, dimension(4, ifinish) :: CAS_MAX
 Cf2py intent(in) istart, ifinish, imeta, ntemps
 Cf2py intent(out) CSEC_DATA
 
@@ -53,7 +54,7 @@ C Circulating round the energies for omega file
         READ(10,380)EMESH1(K),(MATA(N,K),N=1,NOMT1)
       ENDDO
 
-C Create an array of energies in eV
+C Create an aray of energies in eV
       DO i=1,ntemps
         emesh1(i) = emesh1(i) - enat(imeta)
         CSEC_DATA(1,i) = emesh1(i) * 13.6058

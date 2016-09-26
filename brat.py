@@ -48,7 +48,9 @@ for i in range(1, np.size(DATA.wa)+1):
 
 # This array stores branching ratios for every transition in DATA_mat.
 # BRAT(i-->j) = AVAL(i-->j) / sum(AVAL(i-->k))
-ratio_mat = AVAL_MAT[AVAL_MAT[:, 1] >= float(DXU), :]
+# ratio_mat = AVAL_MAT[(AVAL_MAT[:, 0] >= float(DXU)) & \
+#             (AVAL_MAT[:, 1] >= float(DXU + 1)), :]
+ratio_mat = AVAL_MAT[(AVAL_MAT[:, 0] >= float(DXU)), :]
 for i in range(0, np.size(ratio_mat[:, 1]) - 1):
     ratio_mat[i, 2] = ratio_mat[i, 2] / ATOT[int(ratio_mat[i, 1])]
 # %%
@@ -143,10 +145,10 @@ for i in range(1, LAST_LEVEL - DXU + 1):
     tmp = ratio_mat[(ratio_mat[:,0] == DXU) & (ratio_mat[:,1] == DXU + i),:]
     temp_mat1 = np.concatenate((tmp, temp_mat3), axis=0)
     temp_mat2 = ratio_mat[(ratio_mat[:,0] == DXU +i), :]
-    
+
 #    temp_mat1 = temp_mat1[np.argsort(temp_mat1[:,1])]
 #    temp_mat2 = temp_mat2[np.argsort(temp_mat2[:,1])]
-    
+
     for j in range(0,np.size(temp_mat1[:,0])):
         for k in range(0, np.size(temp_mat2[:,0])):
             temp_mat2[k,2] = temp_mat2[k,2] * temp_mat1[j,2]
@@ -172,9 +174,9 @@ for i in range(1, LAST_LEVEL - DXU + 1):
 #    print("DM", DATA_mat)
 #    input("Press Enter to continue...")
 #==============================================================================
-    
+
 #%%
-    
+
 # Sort the DATA array by uper level
 DATA_mat = DATA_mat[np.argsort(DATA_mat[:,0])]
 #print(DATA_mat)
@@ -260,7 +262,7 @@ pl.figure(2, figsize=(8, 6), facecolor='white')
 pl.plot(CSEC_DATA[:,0], CSEC_DATA[:,1],'r' )
 pl.plot(CSEC_DATA[:,0], CSEC_DATA[:,2],'b--' )
 pl.plot(CSEC_DATA[:,0], CSEC_DATA[:,3],'g-.' )
-pl.xlim(10,42)
+#pl.xlim(10,42)
 pl.title(title)
 pl.xlabel('Temperature (eV)')
 pl.ylabel('cross-section (MB)')

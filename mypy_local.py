@@ -1,5 +1,9 @@
 import numpy as np
 
+def reject_outliers(data, column, m=2):
+    return data[(abs(data[:,column] - np.mean(data[:,column]))\
+     < m * np.std(data[:,column]))]
+
 def read_adf04(nlevels, num_ergs, filename):
         # If inf_on > 1 the file uses an infinite energy point
         ## User inputs
@@ -93,14 +97,11 @@ def read_adf04(nlevels, num_ergs, filename):
         adf04dat = Struct(**adf04_dat)
 
         return (adf04dat)
-        
+
 def branch(istart, ifinish, imeta, ntemps):
-    
+
     from branch import csec
     CSEC_DATA = csec(istart, ifinish, imeta, ntemps)
     CSEC_DATA = CSEC_DATA.transpose()
-    
+
     return (CSEC_DATA)
-
-
-

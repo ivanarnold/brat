@@ -1,4 +1,7 @@
-##      Ar+     0   18  1   127110
+udo add-apt-repository ppa:nilarimogard/webupd8
+:q!
+sudo add-apt-repository ppa:nilarimogard/webupd8
+#      Ar+     0   18  1   127110
 ## Level #  Paschen  Valence + LSJ  cm-1        eV
       1     1p0      (1)0(0.0)      0.000       0.000
       2     1s5      4S1(3)1(2.0)   93143.760   11.548

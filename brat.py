@@ -1,3 +1,5 @@
+#! /usr/bin/python3
+
 """ Author: Ivan
 This script is designed to extract branching ratios from an adf04 file
 
@@ -7,7 +9,7 @@ from mypy_local import read_adf04
 import numpy as np
 from branch import csec
 #from IPython import get_ipython
-#ipython = get_ipython()
+#ipython = get_ipython()2
 #
 # initialize some variables
 ZZERO = 1e-10
@@ -51,6 +53,8 @@ for i in range(1, np.size(DATA.wa)+1):
 # ratio_mat = AVAL_MAT[(AVAL_MAT[:, 0] >= float(DXU)) & \
 #             (AVAL_MAT[:, 1] >= float(DXU + 1)), :]
 ratio_mat = AVAL_MAT[(AVAL_MAT[:, 0] >= float(DXU)), :]
+#ratio_mat = AVAL_MAT
+
 for i in range(0, np.size(ratio_mat[:, 1]) - 1):
     ratio_mat[i, 2] = ratio_mat[i, 2] / ATOT[int(ratio_mat[i, 1])]
 # %%

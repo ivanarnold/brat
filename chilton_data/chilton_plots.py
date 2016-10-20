@@ -604,7 +604,7 @@ def excfunc():
     pl.xlabel('Energy (eV)', fontsize=16)
     pl.ylabel('Cross section (MB)', fontsize=16)
     pl.legend(loc=1, frameon=False, scatterpoints=0)
-    pl.savefig("2p2_excit.eps")
+    pl.savefig("2p1_excit.eps")
     pl.show()
 
     return

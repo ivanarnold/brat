@@ -15,8 +15,8 @@ def s5_2p10():
     bartdat = pl.loadtxt('../bartschat_data/paper_figures/s5_2p10.dat')
     ax1 = pl.axes()
     pl.figure(1, figsize=(8, 6), facecolor='white')
-    pl.xlabel('Temperature (eV)')
-    pl.ylabel('Cross section  (MB)')
+    pl.xlabel('Energy (eV)', fontsize=14)
+    pl.ylabel('Cross section  (MB)', fontsize=14)
     pl.xlim(0,17)
     # pl.ylim([0,3575])
     label = '1s5' r'$\rightarrow$'  '2p10 ' '($\Delta J=1)$'
@@ -24,7 +24,7 @@ def s5_2p10():
     pl.plot(brat_dat[:,0],brat_dat[:,3], 'g-.')
     pl.plot(brat_dat[:,0],brat_dat[:,1], 'r--')
     pl.plot(bartdat[:,0]-11.548,bartdat[:,1] * 100., 'bo', ms = 7)
-    pl.legend(loc=1, frameon=False, scatterpoints=0)
+    pl.legend(loc=1, frameon=False, scatterpoints=0, fontsize=14)
     figname = '1s5-2p10_j1_plot_bart.eps'
     pl.savefig(figname)
     pl.show()
@@ -37,8 +37,8 @@ def s5_2p9():
     bartdat = pl.loadtxt('../bartschat_data/paper_figures/s5_2p9.dat')
     ax1 = pl.axes()
     pl.figure(1, figsize=(8, 6), facecolor='white')
-    pl.xlabel('Temperature (eV)')
-    pl.ylabel('Cross section  (MB)')
+    pl.xlabel('Energy (eV)', fontsize=14)
+    pl.ylabel('Cross section  (MB)', fontsize=14)
     pl.xlim(0,17)
     pl.ylim([0,3575])
     label = '1s5' r'$\rightarrow$'  '2p9 ' '($\Delta J=1)$'
@@ -47,7 +47,7 @@ def s5_2p9():
     pl.plot(brat_dat[:,0],brat_dat[:,1], 'r--')
     pl.plot(bartdat[:,0]-11.548,bartdat[:,1] * 100., 'bo', ms = 7)
     pl.plot(bartdat[:,2]-11.548,bartdat[:,3] * 100., 'cD', ms = 7)
-    pl.legend(loc=1, frameon=False, scatterpoints=0)
+    pl.legend(loc=1, frameon=False, scatterpoints=0, fontsize=14)
     figname = '1s5-2p9_j1_plot_bart.eps'
     pl.savefig(figname)
     pl.show()
@@ -60,8 +60,8 @@ def s5_2p8():
     bartdat = pl.loadtxt('../bartschat_data/paper_figures/s5_2p8.dat')
     ax1 = pl.axes()
     pl.figure(1, figsize=(8, 6), facecolor='white')
-    pl.xlabel('Temperature (eV)')
-    pl.ylabel('Cross section  (MB)')
+    pl.xlabel('Energy (eV)', fontsize=14)
+    pl.ylabel('Cross section  (MB)', fontsize=14)
     pl.xlim(0,17)
     label = '1s5' r'$\rightarrow$'  '2p8 ' '($\Delta J=0)$'
     pl.plot(brat_dat[:,0],brat_dat[:,2], 'b', label = label)
@@ -70,7 +70,7 @@ def s5_2p8():
     pl.plot(bartdat[:,0]-11.548,bartdat[:,1] * 100., 'bo', ms = 7)
     pl.plot(bartdat[:,2]-11.548,bartdat[:,3] * 100., 'cD', ms = 7)
     figname = '1s5-2p8_j0_plot_bart.eps'
-    pl.legend(loc=1, frameon=False, scatterpoints=0)
+    pl.legend(loc=1, frameon=False, scatterpoints=0, fontsize=14)
     pl.savefig(figname)
     pl.show()
     return
@@ -82,8 +82,8 @@ def s5_2p7():
     bartdat = pl.loadtxt('../bartschat_data/paper_figures/s5_2p7.dat')
     ax1 = pl.axes()
     pl.figure(1, figsize=(8, 6), facecolor='white')
-    pl.xlabel('Temperature (eV)')
-    pl.ylabel('Cross section  (MB)')
+    pl.xlabel('Energy (eV)', fontsize=14)
+    pl.ylabel('Cross section  (MB)', fontsize=14)
     pl.xlim(0,17)
     # pl.ylim([0,1350])
     label = '1s5' r'$\rightarrow$'  '2p7 ' '($\Delta J=1)$'
@@ -91,7 +91,7 @@ def s5_2p7():
     pl.plot(brat_dat[:,0],brat_dat[:,3], 'g-.')
     pl.plot(brat_dat[:,0],brat_dat[:,1], 'r--')
     pl.plot(bartdat[:,0]-11.548,bartdat[:,1] * 100., 'bo', ms = 7)
-    pl.legend(loc=1, frameon=False, scatterpoints=0)
+    pl.legend(loc=1, frameon=False, scatterpoints=0, fontsize=14)
     figname = '1s5-2p7_j1_plot_bart.eps'
     pl.savefig(figname)
     pl.show()
@@ -104,8 +104,8 @@ def s5_2p6():
     bartdat = pl.loadtxt('../bartschat_data/paper_figures/s5_2p6.dat')
     ax1 = pl.axes()
     pl.figure(1, figsize=(8, 6), facecolor='white')
-    pl.xlabel('Temperature (eV)')
-    pl.ylabel('Cross section  (MB)')
+    pl.xlabel('Energy (eV)', fontsize=14)
+    pl.ylabel('Cross section  (MB)', fontsize=14)
     pl.xlim(0,17)
     pl.ylim([0,1350])
     label = '1s5' r'$\rightarrow$'  '2p6 ' '($\Delta J=0)$'
@@ -114,7 +114,7 @@ def s5_2p6():
     pl.plot(brat_dat[:,0],brat_dat[:,1], 'r--')
     pl.plot(bartdat[:,0]-11.548,bartdat[:,1] * 100., 'bo', ms = 7)
     pl.plot(bartdat[:,2]-11.548,bartdat[:,3] * 100., 'cD', ms = 7)
-    pl.legend(loc=1, frameon=False, scatterpoints=0)
+    pl.legend(loc=1, frameon=False, scatterpoints=0, fontsize=14)
     figname = '1s5-2p6_j0_plot_bart.eps'
     pl.savefig(figname)
     pl.show()
@@ -128,8 +128,8 @@ def s5_2p5():
     bartdat = pl.loadtxt('../bartschat_data/paper_figures/s5_2p5.dat')
     ax1 = pl.axes()
     pl.figure(1, figsize=(8, 6), facecolor='white')
-    pl.xlabel('Temperature (eV)')
-    pl.ylabel('Cross section  (MB)')
+    pl.xlabel('Energy (eV)', fontsize=14)
+    pl.ylabel('Cross section  (MB)', fontsize=14)
     label = '1s5' r'$\rightarrow$'  '2p5 ' '($\Delta J=2)$'
     pl.xlim(0,17)
     pl.plot(brat_dat[:,0],brat_dat[:,2], 'b', label = label)
@@ -137,7 +137,7 @@ def s5_2p5():
     pl.plot(brat_dat[:,0],brat_dat[:,1], 'r--')
     pl.plot(bartdat[:,0]-11.548,bartdat[:,1] * 100., 'bo', ms = 7)
     pl.plot(bartdat[:,2]-11.548,bartdat[:,3] * 100., 'cD', ms = 7)
-    pl.legend(loc=1, frameon=False, scatterpoints=0)
+    pl.legend(loc=1, frameon=False, scatterpoints=0, fontsize=14)
     figname = '1s5-2p5_j2_plot_bart.eps'
     pl.savefig(figname)
     pl.show()
@@ -150,8 +150,8 @@ def s5_2p4():
     bartdat = pl.loadtxt('../bartschat_data/paper_figures/s5_2p4.dat')
     ax1 = pl.axes()
     pl.figure(1, figsize=(8, 6), facecolor='white')
-    pl.xlabel('Temperature (eV)')
-    pl.ylabel('Cross section  (MB)')
+    pl.xlabel('Energy (eV)', fontsize=14)
+    pl.ylabel('Cross section  (MB)', fontsize=14)
     label = '1s5' r'$\rightarrow$'  '2p4 ' '($\Delta J=1)$'
     pl.xlim(0,17)
     pl.plot(brat_dat[:,0],brat_dat[:,2], 'b', label = label)
@@ -159,7 +159,7 @@ def s5_2p4():
     pl.plot(brat_dat[:,0],brat_dat[:,1], 'r--')
     pl.plot(bartdat[:,0]-11.548,bartdat[:,1] * 100., 'bo', ms = 7)
     pl.plot(bartdat[:,2]-11.548,bartdat[:,3] * 100., 'cD', ms = 7)
-    pl.legend(loc=1, frameon=False, scatterpoints=0)
+    pl.legend(loc=1, frameon=False, scatterpoints=0, fontsize=14)
     figname = '1s5-2p4_j1_plot_bart.eps'
     pl.savefig(figname)
     pl.show()
@@ -172,8 +172,8 @@ def s5_2p3():
     bartdat = pl.loadtxt('../bartschat_data/paper_figures/s5_2p3.dat')
     ax1 = pl.axes()
     pl.figure(1, figsize=(8, 6), facecolor='white')
-    pl.xlabel('Temperature (eV)')
-    pl.ylabel('Cross section  (MB)')
+    pl.xlabel('Energy (eV)', fontsize=14)
+    pl.ylabel('Cross section  (MB)', fontsize=14)
     pl.xlim(0,17)
     label = '1s5' r'$\rightarrow$'  '2p3 ' '($\Delta J=0)$'
     pl.plot(brat_dat[:,0],brat_dat[:,2], 'b', label = label)
@@ -181,7 +181,7 @@ def s5_2p3():
     pl.plot(brat_dat[:,0],brat_dat[:,1], 'r--')
     pl.plot(bartdat[:,0]-11.548,bartdat[:,1] * 100., 'bo', ms = 7)
     pl.plot(bartdat[:,2]-11.548,bartdat[:,3] * 100., 'cD', ms = 7)
-    pl.legend(loc=1, frameon=False, scatterpoints=0)
+    pl.legend(loc=1, frameon=False, scatterpoints=0, fontsize=14)
     figname = '1s5-2p3_j0_plot_bart.eps'
     pl.savefig(figname)
     pl.show()
@@ -194,8 +194,8 @@ def s5_2p2():
     bartdat = pl.loadtxt('../bartschat_data/paper_figures/s5_2p2.dat')
     ax1 = pl.axes()
     pl.figure(1, figsize=(8, 6), facecolor='white')
-    pl.xlabel('Temperature (eV)')
-    pl.ylabel('Cross section  (MB)')
+    pl.xlabel('Energy (eV)', fontsize=14)
+    pl.ylabel('Cross section  (MB)', fontsize=14)
     pl.xlim(0,17)
     label = '1s5' r'$\rightarrow$'  '2p2 ' '($\Delta J=1)$'
     pl.plot(brat_dat[:,0],brat_dat[:,2], 'b', label = label)
@@ -203,7 +203,7 @@ def s5_2p2():
     pl.plot(brat_dat[:,0],brat_dat[:,1], 'r--')
     pl.plot(bartdat[:,0]-11.548,bartdat[:,1] * 100., 'bo', ms = 7)
     pl.plot(bartdat[:,2]-11.548,bartdat[:,3] * 100., 'cD', ms = 7)
-    pl.legend(loc=1, frameon=False, scatterpoints=0)
+    pl.legend(loc=1, frameon=False, scatterpoints=0, fontsize=14)
     figname = '1s5-2p2_j1_plot_bart.eps'
     pl.savefig(figname)
     pl.show()
@@ -216,24 +216,24 @@ def s5_2p1():
     bartdat = pl.loadtxt('../bartschat_data/paper_figures/s5_2p1.dat')
     ax1 = pl.axes()
     pl.figure(1, figsize=(8, 6), facecolor='white')
-    pl.xlabel('Temperature (eV)')
-    pl.ylabel('Cross section  (MB)')
+    pl.xlabel('Energy (eV)', fontsize=14)
+    pl.ylabel('Cross section  (MB)', fontsize=14)
     pl.xlim(0,17)
     label = '1s5' r'$\rightarrow$'  '2p1 ' '($\Delta J=2)$'
     pl.plot(brat_dat[:,0],brat_dat[:,2], 'b', label = label)
     pl.plot(brat_dat[:,0],brat_dat[:,3], 'g-.')
     pl.plot(brat_dat[:,0],brat_dat[:,1], 'r--')
     pl.plot(bartdat[:,0]-11.548,bartdat[:,1] * 100., 'bo', ms = 7)
-    pl.legend(loc=1, frameon=False, scatterpoints=0)
-    figname = '1s5-2p2_j1_plot_bart.eps'
+    pl.legend(loc=1, frameon=False, scatterpoints=0, fontsize=14)
+    figname = '1s5-2p1_j2_plot_bart.eps'
     pl.savefig(figname)
     pl.show()
     return
 s5_2p1()
 
 def reject_outliers(data, column, m=2):
-    return data[(abs(data[:,column] - np.mean(data[:,column]))\
-     < m * np.std(data[:,column]))]
+    return data[(abs(data[:,column] - pl.mean(data[:,column]))\
+     < m * pl.std(data[:,column]))]
 
 def s3_2p10():
     pl.clf()
@@ -244,8 +244,8 @@ def s3_2p10():
     bartdat = pl.loadtxt('../bartschat_data/paper_figures/s3_2p10.dat')
     ax1 = pl.axes()
     pl.figure(1, figsize=(8, 6), facecolor='white')
-    pl.xlabel('Temperature (eV)')
-    pl.ylabel('Cross section  (MB)')
+    pl.xlabel('Energy (eV)', fontsize=14)
+    pl.ylabel('Cross section  (MB)', fontsize=14)
     pl.xlim(0,17)
     # pl.ylim([0, 1500])
     label = '1s3' r'$\rightarrow$'  '2p10 ' '($\Delta J=1)$'
@@ -253,7 +253,7 @@ def s3_2p10():
     pl.plot(brat_dat[:,0],brat_dat[:,3], 'g-.')
     pl.plot(brat_dat[:,0],brat_dat[:,1], 'r--')
     pl.plot(bartdat[:,0]-11.548,bartdat[:,1] * 100., 'bo', ms = 7)
-    pl.legend(loc=1, markerscale=0, frameon = False)
+    pl.legend(loc=1, markerscale=0, frameon = False, fontsize=14)
     figname = '1s3-2p10_j1_plot_bart.eps'
     pl.savefig(figname)
     pl.show()
@@ -268,8 +268,8 @@ def s3_2p9():
     bartdat = pl.loadtxt('../bartschat_data/paper_figures/s3_2p9.dat')
     ax1 = pl.axes()
     pl.figure(1, figsize=(8, 6), facecolor='white')
-    pl.xlabel('Temperature (eV)')
-    pl.ylabel('Cross section  (MB)')
+    pl.xlabel('Energy (eV)', fontsize=14)
+    pl.ylabel('Cross section  (MB)', fontsize=14)
     pl.xlim(0,17)
     # pl.ylim([0, 500])
     label = '1s3' r'$\rightarrow$'  '2p9 ' '($\Delta J=3)$'
@@ -277,7 +277,7 @@ def s3_2p9():
     pl.plot(brat_dat[:,0],brat_dat[:,3], 'g-.')
     pl.plot(brat_dat[:,0],brat_dat[:,1], 'r', ms=2)
     pl.plot(bartdat[:,0]-11.548,bartdat[:,1] * 100., 'bo', ms = 7)
-    pl.legend(loc=1, markerscale=0, frameon = False)
+    pl.legend(loc=1, markerscale=0, frameon = False, fontsize=14)
     figname = '1s3-2p9_j3_plot_bart.eps'
     pl.savefig(figname)
     pl.show()
@@ -290,8 +290,8 @@ def s3_2p8():
     bartdat = pl.loadtxt('../bartschat_data/paper_figures/s3_2p8.dat')
     ax1 = pl.axes()
     pl.figure(1, figsize=(8, 6), facecolor='white')
-    pl.xlabel('Temperature (eV)')
-    pl.ylabel('Cross section  (MB)')
+    pl.xlabel('Energy (eV)', fontsize=14)
+    pl.ylabel('Cross section  (MB)', fontsize=14)
     pl.xlim(0,17)
     # pl.ylim([0, 500])
     label = '1s3' r'$\rightarrow$'  '2p8 ' '($\Delta J=2)$'
@@ -299,7 +299,7 @@ def s3_2p8():
     pl.plot(brat_dat[:,0],brat_dat[:,3], 'g-.')
     pl.plot(brat_dat[:,0],brat_dat[:,1], 'r--')
     pl.plot(bartdat[:,0]-11.548,bartdat[:,1] * 100., 'bo', ms = 7)
-    pl.legend(loc=1, markerscale=0, frameon = False)
+    pl.legend(loc=1, markerscale=0, frameon = False, fontsize=14)
     figname = '1s3-2p8_j2_plot_bart.eps'
     pl.savefig(figname)
     pl.show()
@@ -315,8 +315,8 @@ def s3_2p7():
     bartdat = pl.loadtxt('../bartschat_data/paper_figures/s3_2p7.dat')
     ax1 = pl.axes()
     pl.figure(1, figsize=(8, 6), facecolor='white')
-    pl.xlabel('Temperature (eV)')
-    pl.ylabel('Cross section  (MB)')
+    pl.xlabel('Energy (eV)', fontsize=14)
+    pl.ylabel('Cross section  (MB)', fontsize=14)
     pl.xlim(0,17)
     # pl.ylim([0, 500])
     label = '1s3' r'$\rightarrow$'  '2p7 ' '($\Delta J=1)$'
@@ -324,8 +324,8 @@ def s3_2p7():
     pl.plot(brat_dat[:,0],brat_dat[:,3], 'g-.')
     pl.plot(brat_dat[:,0],brat_dat[:,1], 'r--')
     pl.plot(bartdat[:,0]-11.548,bartdat[:,1] * 100., 'bo', ms = 7)
-    pl.legend(loc=1, markerscale=0, frameon = False)
-    figname = '1s3-2p7_j2_plot_bart.eps'
+    pl.legend(loc=1, markerscale=0, frameon = False, fontsize=14)
+    figname = '1s3-2p7_j1_plot_bart.eps'
     pl.savefig(figname)
     pl.show()
     return
@@ -339,8 +339,8 @@ def s3_2p6():
     bartdat = pl.loadtxt('../bartschat_data/paper_figures/s3_2p6.dat')
     ax1 = pl.axes()
     pl.figure(1, figsize=(8, 6), facecolor='white')
-    pl.xlabel('Temperature (eV)')
-    pl.ylabel('Cross section  (MB)')
+    pl.xlabel('Energy (eV)', fontsize=14)
+    pl.ylabel('Cross section  (MB)', fontsize=14)
     pl.xlim(0,17)
     # pl.ylim([0, 500])
     label = '1s3' r'$\rightarrow$'  '2p6 ' '($\Delta J=2)$'
@@ -348,7 +348,7 @@ def s3_2p6():
     pl.plot(brat_dat[:,0],brat_dat[:,3], 'g-.')
     pl.plot(brat_dat[:,0],brat_dat[:,1], 'r--')
     pl.plot(bartdat[:,0]-11.548,bartdat[:,1] * 100., 'bo', ms = 7)
-    pl.legend(loc=1, markerscale=0, frameon = False)
+    pl.legend(loc=1, markerscale=0, frameon = False, fontsize=14)
     figname = '1s3-2p6_j2_plot_bart.eps'
     pl.savefig(figname)
     pl.show()
@@ -363,8 +363,8 @@ def s3_2p5():
     bartdat = pl.loadtxt('../bartschat_data/paper_figures/s3_2p5.dat')
     ax1 = pl.axes()
     pl.figure(1, figsize=(8, 6), facecolor='white')
-    pl.xlabel('Temperature (eV)')
-    pl.ylabel('Cross section  (MB)')
+    pl.xlabel('Energy (eV)', fontsize=14)
+    pl.ylabel('Cross section  (MB)', fontsize=14)
     pl.xlim(0,17)
     # pl.ylim([0, 500])
     label = '1s3' r'$\rightarrow$'  '2p5 ' '($\Delta J=0)$'
@@ -372,7 +372,7 @@ def s3_2p5():
     pl.plot(brat_dat[:,0],brat_dat[:,3], 'g-.')
     pl.plot(brat_dat[:,0],brat_dat[:,1], 'r--')
     pl.plot(bartdat[:,0]-11.548,bartdat[:,1] * 100., 'bo', ms = 7)
-    pl.legend(loc=1, markerscale=0, frameon = False)
+    pl.legend(loc=1, markerscale=0, frameon = False, fontsize=14)
     figname = '1s3-2p5_j0_plot_bart.eps'
     pl.savefig(figname)
     pl.show()
@@ -385,8 +385,8 @@ def s3_2p4():
     bartdat = pl.loadtxt('../bartschat_data/paper_figures/s3_2p4.dat')
     ax1 = pl.axes()
     pl.figure(1, figsize=(8, 6), facecolor='white')
-    pl.xlabel('Temperature (eV)')
-    pl.ylabel('Cross section  (MB)')
+    pl.xlabel('Energy (eV)', fontsize=14)
+    pl.ylabel('Cross section  (MB)', fontsize=14)
     pl.xlim(0,17)
     pl.ylim([0,3800])
     label = '1s3' r'$\rightarrow$'  '2p4 ' '($\Delta J=1)$'
@@ -395,7 +395,7 @@ def s3_2p4():
     pl.plot(brat_dat[:,0],brat_dat[:,1], 'r--')
     pl.plot(bartdat[:,0]-11.548,bartdat[:,1] * 100., 'bo', ms = 7)
     pl.plot(bartdat[:,2]-11.548,bartdat[:,3] * 100., 'cD', ms = 7)
-    pl.legend(loc=1, markerscale=0, frameon = False)
+    pl.legend(loc=1, markerscale=0, frameon = False, fontsize=14)
     figname = '1s3-2p4_j1_plot_bart.eps'
     pl.savefig(figname)
     pl.show()
@@ -410,8 +410,8 @@ def s3_2p3():
     bartdat = pl.loadtxt('../bartschat_data/paper_figures/s3_2p3.dat')
     ax1 = pl.axes()
     pl.figure(1, figsize=(8, 6), facecolor='white')
-    pl.xlabel('Temperature (eV)')
-    pl.ylabel('Cross section  (MB)')
+    pl.xlabel('Energy (eV)', fontsize=14)
+    pl.ylabel('Cross section  (MB)', fontsize=14)
     pl.xlim(0,17)
     # pl.ylim([0, 500])
     label = '1s3' r'$\rightarrow$'  '2p3 ' '($\Delta J=2)$'
@@ -419,7 +419,7 @@ def s3_2p3():
     pl.plot(brat_dat[:,0],brat_dat[:,3], 'g-.')
     pl.plot(brat_dat[:,0],brat_dat[:,1], 'r--')
     pl.plot(bartdat[:,0]-11.548,bartdat[:,1] * 100., 'bo', ms = 7)
-    pl.legend(loc=1, markerscale=0, frameon = False)
+    pl.legend(loc=1, markerscale=0, frameon = False, fontsize=14)
     figname = '1s3-2p3_j2_plot_bart.eps'
     pl.savefig(figname)
     pl.show()
@@ -432,15 +432,15 @@ def s3_2p2():
     bartdat = pl.loadtxt('../bartschat_data/paper_figures/s3_2p2.dat')
     ax1 = pl.axes()
     pl.figure(1, figsize=(8, 6), facecolor='white')
-    pl.xlabel('Temperature (eV)')
-    pl.ylabel('Cross section  (MB)')
+    pl.xlabel('Energy (eV)', fontsize=14)
+    pl.ylabel('Cross section  (MB)', fontsize=14)
     pl.xlim(0,17)
-    pl.ylim([0,1800])
+    pl.ylim([0,1900])
     label = '1s3' r'$\rightarrow$'  '2p2 ' '($\Delta J=1)$'
     pl.plot(brat_dat[:,0],brat_dat[:,2], 'b', label = label)
     pl.plot(brat_dat[:,0],brat_dat[:,3], 'g-.')
     pl.plot(brat_dat[:,0],brat_dat[:,1], 'r--')
-    pl.legend(loc=1, frameon=False, scatterpoints=0)
+    pl.legend(loc=1, frameon=False, scatterpoints=0, fontsize=14)
     pl.plot(bartdat[:,0]-11.548,bartdat[:,1] * 100., 'bo', ms = 7)
     pl.plot(bartdat[:,2]-11.548,bartdat[:,3] * 100., 'cD', ms = 7)
     figname = '1s3-2p2_j1_plot_bart.eps'
@@ -457,8 +457,8 @@ def s3_2p1():
     bartdat = pl.loadtxt('../bartschat_data/paper_figures/s3_2p1.dat')
     ax1 = pl.axes()
     pl.figure(1, figsize=(8, 6), facecolor='white')
-    pl.xlabel('Temperature (eV)')
-    pl.ylabel('Cross section  (MB)')
+    pl.xlabel('Energy (eV)', fontsize=14)
+    pl.ylabel('Cross section  (MB)', fontsize=14)
     pl.xlim(0,17)
     # pl.ylim([0, 500])
     label = '1s3' r'$\rightarrow$'  '2p1 ' '($\Delta J=0)$'
@@ -466,8 +466,8 @@ def s3_2p1():
     pl.plot(brat_dat[:,0],brat_dat[:,3], 'g-.')
     pl.plot(brat_dat[:,0],brat_dat[:,1], 'r--')
     pl.plot(bartdat[:,0]-11.548,bartdat[:,1] * 100., 'bo', ms = 7)
-    pl.legend(loc=1, markerscale=0, frameon = False)
-    figname = '1s3-2p1_j2_plot_bart.eps'
+    pl.legend(loc=1, markerscale=0, frameon = False, fontsize=14)
+    figname = '1s3-2p1_j_plot_bart.eps'
     pl.savefig(figname)
     pl.show()
     return
